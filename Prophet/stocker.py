@@ -935,7 +935,7 @@ class Stocker():
         
         model = self.create_model()
         
-        model.fit(train, control={'max_treedepth': 15})
+        model.fit(train, control={'max_treedepth': 15} , chains=1)
         
         # Future dataframe with specified number of days to predict
         future = model.make_future_dataframe(periods = self.predict_period, freq=self.predict_freq)
