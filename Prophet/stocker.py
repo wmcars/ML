@@ -7,13 +7,14 @@ import fbprophet
 import pytrends
 from pytrends.request import TrendReq
 import fix_yahoo_finance as fix
+
 from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 # matplotlib pyplot for plotting
 import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score
 import matplotlib
-
+fix.pdr_override()
 # Class for analyzing and (attempting) to predict future prices
 # Contains a number of visualizations and analysis methods
 class Stocker():
