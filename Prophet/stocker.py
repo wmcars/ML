@@ -441,7 +441,7 @@ class Stocker():
             
             # Create and train a model with the specified cps
             model = self.create_model()
-            model.fit(train)
+            model.fit(train, control={'max_treedepth': 15} , chains=1)
             future = model.make_future_dataframe(periods=180, freq='D')
             
             # Make a dataframe to hold predictions
@@ -499,7 +499,7 @@ class Stocker():
         if resample:
             stock_history = self.resample(stock_history)
         
-        model.fit(stock_history)
+        model.fit(stock_history, control={'max_treedepth': 15} , chains=1)
         
         # Make and predict for next year with future dataframe freq=3600 for 1h
         future = model.make_future_dataframe(periods = days, freq='D')
@@ -556,7 +556,7 @@ class Stocker():
         
         # Create and train the model
         model = self.create_model()
-        model.fit(train)
+        model.fit(train, control={'max_treedepth': 15} , chains=1)
         
         # Make a future dataframe and predictions
         future = model.make_future_dataframe(periods = self.predict_period, freq=self.predict_freq)
@@ -814,7 +814,7 @@ class Stocker():
         
         # Use past self.training_years years of data
         train = self.stock[self.stock['Date'] > (self.max_date - pd.DateOffset(months = self.training_months))]
-        model.fit(train)
+        model.fit(train, control={'max_treedepth': 15} , chains=1)
         
         # Predictions of the training data (no future periods)
         future = model.make_future_dataframe(periods=0, freq='D')
@@ -1040,7 +1040,7 @@ class Stocker():
             
             # Create and train a model with the specified cps
             model = self.create_model()
-            model.fit(train)
+            model.fit(train, control={'max_treedepth': 15} , chains=1)
             future = model.make_future_dataframe(periods=eval_days, freq='D')
                 
             future = model.predict(future)
