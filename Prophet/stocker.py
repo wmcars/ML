@@ -12,6 +12,7 @@ from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 # matplotlib pyplot for plotting
 import matplotlib.pyplot as plt
+%matplotlib inline
 from sklearn.metrics import r2_score
 import matplotlib
 fix.pdr_override()
