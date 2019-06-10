@@ -7,7 +7,7 @@ import fbprophet
 import pytrends
 from pytrends.request import TrendReq
 import fix_yahoo_finance as fix
-
+!pip install pytrends
 from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 # matplotlib pyplot for plotting
