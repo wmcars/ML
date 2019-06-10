@@ -1,7 +1,6 @@
 # Quandl for financial analysis, pandas and numpy for data manipulation
 # fbprophet for additive models, #pytrends for Google trend data
 #import quandl
-pip install pytrends
 import pandas as pd
 import numpy as np
 import fbprophet
